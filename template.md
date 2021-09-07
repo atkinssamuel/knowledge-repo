@@ -5,7 +5,7 @@
 Available: <br />
 
 Summary:  
-- Point 1
+- P1
 
 <br />
 
@@ -13,19 +13,15 @@ Summary:
 
 ### Summary
 Intro:  
-- Point 1
+- P1
 
 Method:
-- Point 1
+- P1
 
 Results:
-- Point 1
+- P1
 
 <br />
 
-
-
-Insights:
-
-Insights:
-- Point 1
+*Insights:*
+- P1

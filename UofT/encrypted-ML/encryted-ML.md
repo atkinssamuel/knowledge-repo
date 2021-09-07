@@ -37,7 +37,7 @@ Method:
 - "Approximate HE"
     - Reduces computational overheads
     - Adds additional noise for each computation step that may affect the overall ML performance (unclear how significant this is)
-- Utilizes the "packing method" ("Homomorphic encryption for arithmetic of approximate numbers")
+- Utilizes the "packing method" ("Homomorphic encryption for arithmetic of approximate numbers" - CKKS paper)
 
 Results:
 - Takes ~17 hours to train a model on a dataset of size 422,108 x 200
@@ -47,9 +47,7 @@ Results:
 
 <br />
 
-
-
-Insights:
+*Insights:*
 - 17 hours to train is very long
     - With a training time this long, the model likely has poor generalization, is difficult to validate, and cannot be actually implemented
 - 96.4% is not exactly a useful metric
