@@ -4,7 +4,8 @@
 
 Available: https://eprint.iacr.org/2018/662.pdf<br />
 Summary:
-- Point 1
+- Method shows "practical" logistic regression model that utilizes "approximate HE", the CKKS packing method in conjunction with SIMD operations, parallelized bootstrapping, clever training data packing, polynomial approximations for non-polynomial functions, mini-batch gradient descent, and NAG
+- The model takes 17 hours to train and achieves an accuracy of 96.4%
 
 > Machine learning on encrypted data is a cryptographic method
 for analyzing private and/or sensitive data while keeping privacy. In the
@@ -37,7 +38,17 @@ Method:
 - "Approximate HE"
     - Reduces computational overheads
     - Adds additional noise for each computation step that may affect the overall ML performance (unclear how significant this is)
-- Utilizes the "packing method" ("Homomorphic encryption for arithmetic of approximate numbers" - CKKS paper)
+- Utilizes the "packing method" ("Homomorphic encryption for arithmetic of approximate numbers" - CKKS paper) in conjunction with "SIMD" operations
+    - SIMD = Single Instruction/Multiple Data
+        - It only takes one instruction to multiply a batch of data together
+        - This results in fewer instructions to process data
+- Parallelized bootstrapping (because bootstrapping is the most computationally intensive operation)
+- Clever training data packing (the training data is partitioned into m' x n' partitions where m' x n' is the maximum size of the ciphertexts)
+- All non-polynomial functions are approximated as polynomial functions
+    - Sigmoid is approximated
+- Mini-batch gradient descent because SGD does not utilize the maximum capacity of each ciphertext and GD requires ciphertexts that are too large
+- "Nesterov Accelerated Gradient Optimizer" because it is fast and doesn't use division
+
 
 Results:
 - Takes ~17 hours to train a model on a dataset of size 422,108 x 200
@@ -54,4 +65,5 @@ Results:
     - What about recall, precision, etc.? This could just be predicting 1 on a fraud dataset. What is the problem type?
 - Big banks have extensive validation pipelines to make sure that their models are not acting unfairly. Explainability is huge. How can a model like this ever be implemented in the real world?
     - The feasability of homomorphic encryption is difficult to see
-
+- Bootstrapping dominates the overall training time and so improvements in the bootstrapping operation is the key to contributing to the field
+- Could compare SGD, mini-batch GD, GD performances in HE
