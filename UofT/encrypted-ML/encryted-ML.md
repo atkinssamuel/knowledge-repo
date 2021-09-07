@@ -1,7 +1,7 @@
 # Index
 - [Efficient Logistic Regression on Large Encrypted Data](#efficient-logistic-regression-on-large-encrypted-data)
 - [Logistic Regression Model Training based on the Approximate Homomorphic Encryption](#logistic-regression-model-training-based-on-the-approximate-homomorphic-encryption)
-
+- [Logistic regression over encrypted data from fully homomorphic encryption](#logistic-regression-over-encrypted-data-from-fully-homomorphic-encryption)
 
 ## Efficient Logistic Regression on Large Encrypted Data
 ##### Authors: Kyoohyung Han, Seungwan Hong, Jung Hee Cheon, and Daejun Park
@@ -115,18 +115,34 @@ Results:
         - Companies don't own "advanced proprietary models" that need to be protected or used as a service
         - Models need to be validated in order to be used by most institutions
 
-## Title
-##### Authors: 
+## Logistic regression over encrypted data from fully homomorphic encryption
+##### Authors: Hao Chen, Ran Gilad-Bachrach, Kyoohyung Han, Zhicong Huang, Amir Jalali, Kim Laine, Kristin Lauter
+
 <br />
 
-Available: <br />
+Available: https://eprint.iacr.org/2018/462.pdf<br />
 
 Summary:  
 - P1
 
 <br />
 
-> Abstract
+> One of the tasks in the 2017 iDASH secure genome analysis competition was to enable training of logistic regression models over
+encrypted genomic data. More precisely, given a list of approximately
+1500 patient records, each with 18 binary features containing information on specific mutations, the idea was for the data holder to encrypt the
+records using homomorphic encryption, and send them to an untrusted
+cloud for storage. The cloud could then apply a training algorithm on the
+encrypted data to obtain an encrypted logistic regression model, which
+can be sent to the data holder for decryption. In this way, the data holder
+could successfully outsource the training process without revealing either
+her sensitive data, or the trained model, to the cloud. Our solution to this
+problem has several novelties: we use a multi-bit plaintext space in fully
+homomorphic encryption together with fixed point number encoding; we
+combine bootstrapping in fully homomorphic encryption with a scaling
+operation in fixed point arithmetic; we use a minimax polynomial approximation to the sigmoid function and the 1-bit gradient descent method
+to reduce the plaintext growth in the training process. As a result, our
+training over encrypted data takes 0.4–3.2 hours per iteration of gradient
+descent.
 
 ### Summary
 Method:
