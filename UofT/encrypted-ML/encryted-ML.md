@@ -75,6 +75,7 @@ Available: https://eprint.iacr.org/2018/254.pdf<br />
 Summary:  
 - Introduces and evaluates a LR model that utilizes packing and NAG
 - The model is trained on a tiny dataset and yields a training time of 6 minutes (which is somehow comparatively fast)
+- Research performed by CKKS authors (these are not data scientists)
 
 <br />
 
