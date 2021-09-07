@@ -31,10 +31,8 @@ of the logistic regression training on large encrypted data, for the first
 time to the best of our knowledge.
 
 ### Summary
-Intro:  
-- Explaining fully-encrypted training and inference (no decryption key for either phase)
-
 Method:
+- Fully-encrypted training and inference (no decryption key for either phase)
 - "Approximate HE"
     - Reduces computational overheads
     - Adds additional noise for each computation step that may affect the overall ML performance (unclear how significant this is)
@@ -67,3 +65,46 @@ Results:
     - The feasability of homomorphic encryption is difficult to see
 - Bootstrapping dominates the overall training time and so improvements in the bootstrapping operation is the key to contributing to the field
 - Could compare SGD, mini-batch GD, GD performances in HE
+
+## Logistic Regression Model Training based on the Approximate Homomorphic Encryption
+##### Authors: Andrey Kim, Yongsoo Song, Miran Kim, Keewoo Lee, and Jung Hee Cheon
+<br />
+
+Available: https://eprint.iacr.org/2018/254.pdf<br />
+
+Summary:  
+- Introduces and evaluates a LR model that utilizes packing and NAG
+- The model is trained on a tiny dataset and yields a training time of 6 minutes (which is somehow comparatively fast)
+
+<br />
+
+> Security concerns have been raised since big data became a prominent tool in data
+analysis. For instance, many machine learning algorithms aim to generate prediction models
+using training data which contain sensitive information about individuals. Cryptography community is considering secure computation as a solution for privacy protection. In particular,
+practical requirements have triggered research on the efficiency of cryptographic primitives.
+This paper presents a practical method to train a logistic regression model while preserving
+the data confidentiality We apply the homomorphic encryption scheme of Cheon et al. (ASIACRYPT 2017) for an efficient arithmetic over real numbers, and devise a new encoding method
+to reduce storage of encrypted database. In addition, we adapt Nesterov’s accelerated gradient
+method to reduce the number of iterations as well as the computational cost while maintaining
+the quality of an output classifier.
+Our method shows a state-of-the-art performance of homomorphic encryption system in a realworld application. The submission based on this work was selected as the best solution of Track
+3 at iDASH privacy and security competition 2017. For example, it took about six minutes to
+obtain a logistic regression model given the dataset consisting of 1579 samples, each of which
+has 18 features with a binary outcome variable.
+
+### Summary
+Method:
+- Packing method utilized
+- NAG for convergence rate
+
+Results:
+- Performance evaluated on a 1579 x 18 dataset
+- Training time is 6 minutes (this was compared with some of the other methods but different storage capacities were used so it is difficult to quantify the performance increase/decrease)
+
+<br />
+
+*Insights:*
+- A 1579 x 18 dataset is pathetically small and would never be used in any real application
+    - Scaling this up would result in training times that are not practical. These mathematicians are forgetting about HP tuning, data analysis techniques, and the core principles that data scientists follow
+        - Companies don't own "advanced proprietary models" that need to be protected or used as a service
+        - Models need to be validated in order to be used by most institutions

@@ -12,9 +12,6 @@ Summary:
 > Abstract
 
 ### Summary
-Intro:  
-- P1
-
 Method:
 - P1
 
