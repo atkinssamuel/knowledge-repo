@@ -9,6 +9,7 @@
 
 Available: https://eprint.iacr.org/2018/662.pdf<br />
 Summary:
+- HEAAN/CKKS encryption scheme
 - Method shows "practical" logistic regression model that utilizes "approximate HE", the CKKS packing method in conjunction with SIMD operations, parallelized bootstrapping, clever training data packing, polynomial approximations for non-polynomial functions, mini-batch gradient descent, and NAG
 - The model takes 17 hours to train and achieves an accuracy of 96.4%
 
@@ -37,8 +38,9 @@ time to the best of our knowledge.
 
 ### Summary
 Method:
+- HEAAN/CKKS encryption scheme
 - Fully-encrypted training and inference (no decryption key for either phase)
-- "Approximate HE"
+- "Approximate HE" (HEAAN)
     - Reduces computational overheads
     - Adds additional noise for each computation step that may affect the overall ML performance (unclear how significant this is)
 - Utilizes the "packing method" ("Homomorphic encryption for arithmetic of approximate numbers" - CKKS paper) in conjunction with "SIMD" operations
@@ -78,6 +80,8 @@ Results:
 Available: https://eprint.iacr.org/2018/254.pdf<br />
 
 Summary:  
+- HEAAN/CKKS encryption scheme
+- Done in response to the 2017 iDASH competition
 - Introduces and evaluates a LR model that utilizes packing and NAG
 - The model is trained on a tiny dataset and yields a training time of 6 minutes (which is somehow comparatively fast)
 - Research performed by CKKS authors (these are not data scientists)
@@ -123,7 +127,10 @@ Results:
 Available: https://eprint.iacr.org/2018/462.pdf<br />
 
 Summary:  
-- P1
+- BFV encryption scheme
+- Done in response to the 2017 iDASH competition
+- The 1-Bit GD method offers training time improvements and sacrifices some performance in turn
+- These datasets do not approximate practical data science scenarios
 
 <br />
 
@@ -146,12 +153,23 @@ descent.
 
 ### Summary
 Method:
-- P1
+- BFV encryption scheme
+- Polynomial approximation of the Sigmoid function
+- Batching of vectors and SIMD operations
+- Modified 1-Bit GD with data batching
+- Tested their method on a 1579 x 18 dataset and a modified binary classification version of the MNIST dataset ("3" or "8")
 
 Results:
-- P1
+- iDASH dataset:
+    - GD: 115.33h training time, 0.690/0.690 AUC scores (encrypted/unencrypted)
+    - 1-Bit GD: 14.9h training time, 0.668/0.690 AUC scores (encrypted/unencrypted)
+- BC MNIST:
+    - GD: 48.76h training time,  0.974/0.977 AUC scores (encrypted/unencrypted)
+    - 1-Bit GD: 27.1h training time, 0.974/0.978 AUC scores (encrypted/unencrypted)
 
 <br />
 
 *Insights:*
-- P1
+- Just as with the CKKS logistic regression experiments, a 1579 x 18 dataset is pathetically small
+    - No real considerations to a real data science problem
+- The 1-Bit GD method using the BFV scheme offers training time improvements and sacrifices some performance

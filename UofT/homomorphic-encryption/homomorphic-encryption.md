@@ -8,7 +8,7 @@
 Available: https://eprint.iacr.org/2016/421.pdf<br />
 
 Summary:  
-- Introduces CKKS (Cheon, Kim, Kim, Song) encryption scheme
+- Introduces CKKS (Cheon, Kim, Kim, Song) a.k.a. HEAAN (Homomorphic Encryption for Arithmetic of Approximate Numbers) encryption scheme
 - CKKS utilizes "rescaling" and "isometric ring homomorphism" during packing
 - The depth of the precision loss during homomorphic evaluation is bounded by the depth of a circuit with this scheme
 
