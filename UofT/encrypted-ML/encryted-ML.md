@@ -1,3 +1,8 @@
+# Index
+- [Efficient Logistic Regression on Large Encrypted Data](#efficient-logistic-regression-on-large-encrypted-data)
+- [Logistic Regression Model Training based on the Approximate Homomorphic Encryption](#logistic-regression-model-training-based-on-the-approximate-homomorphic-encryption)
+
+
 ## Efficient Logistic Regression on Large Encrypted Data
 ##### Authors: Kyoohyung Han, Seungwan Hong, Jung Hee Cheon, and Daejun Park
 <br />
@@ -109,3 +114,28 @@ Results:
     - Scaling this up would result in training times that are not practical. These mathematicians are forgetting about HP tuning, data analysis techniques, and the core principles that data scientists follow
         - Companies don't own "advanced proprietary models" that need to be protected or used as a service
         - Models need to be validated in order to be used by most institutions
+
+## Title
+##### Authors: 
+<br />
+
+Available: <br />
+
+Summary:  
+- P1
+
+<br />
+
+> Abstract
+
+### Summary
+Method:
+- P1
+
+Results:
+- P1
+
+<br />
+
+*Insights:*
+- P1
