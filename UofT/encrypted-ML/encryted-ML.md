@@ -2,9 +2,12 @@
 - [Efficient Logistic Regression on Large Encrypted Data](#efficient-logistic-regression-on-large-encrypted-data)
 - [Logistic Regression Model Training based on the Approximate Homomorphic Encryption](#logistic-regression-model-training-based-on-the-approximate-homomorphic-encryption)
 - [Logistic regression over encrypted data from fully homomorphic encryption](#logistic-regression-over-encrypted-data-from-fully-homomorphic-encryption)
+- [Secure Logistic Regression Based on Homomorphic Encryption: Design and Evaluation](#secure-logistic-regression-based-on-homomorphic-encryption:-design-and-evaluation)
 
 ## Efficient Logistic Regression on Large Encrypted Data
 ##### Authors: Kyoohyung Han, Seungwan Hong, Jung Hee Cheon, and Daejun Park
+###### Published: 2018
+
 <br />
 
 Available: https://eprint.iacr.org/2018/662.pdf<br />
@@ -75,6 +78,8 @@ Results:
 
 ## Logistic Regression Model Training based on the Approximate Homomorphic Encryption
 ##### Authors: Andrey Kim, Yongsoo Song, Miran Kim, Keewoo Lee, and Jung Hee Cheon
+###### Published: 2018
+
 <br />
 
 Available: https://eprint.iacr.org/2018/254.pdf<br />
@@ -121,6 +126,7 @@ Results:
 
 ## Logistic regression over encrypted data from fully homomorphic encryption
 ##### Authors: Hao Chen, Ran Gilad-Bachrach, Kyoohyung Han, Zhicong Huang, Amir Jalali, Kim Laine, Kristin Lauter
+###### Published: 2018
 
 <br />
 
@@ -173,3 +179,62 @@ Results:
 - Just as with the CKKS logistic regression experiments, a 1579 x 18 dataset is pathetically small
     - No real considerations to a real data science problem
 - The 1-Bit GD method using the BFV scheme offers training time improvements and sacrifices some performance
+
+## Secure Logistic Regression Based on Homomorphic Encryption: Design and Evaluation
+##### Authors: Miran Kim, Yongsoo Song, Shuang Wang, Yuhou Xia, and Xiaoqian Jiang
+###### Published: 2018
+<br />
+
+Available: https://eprint.iacr.org/2018/074.pdf<br />
+
+Summary:  
+- Homomorphic encryption was used to create a logistic regression model
+- CKKS encryption scheme was used
+- Degree 3 and 7 polynomial approximations were compared
+
+<br />
+
+> Learning a model without accessing raw data has been an intriguing idea to the
+security and machine learning researchers for years. In an ideal setting, we want to encrypt
+sensitive data to store them on a commercial cloud and run certain analysis without ever
+decrypting the data to preserve the privacy. Homomorphic encryption technique is a promising
+candidate for secure data outsourcing but it is a very challenging task to support real-world
+machine learning tasks. Existing frameworks can only handle simplified cases with low-degree
+polynomials such as linear means classifier and linear discriminative analysis.
+The goal of this study is to provide a practical support to the mainstream learning models
+(e.g. logistic regression). We adapted a novel homomorphic encryption scheme optimized for real
+numbers computation. We devised (1) the least squares approximation of the logistic function for
+accuracy and efficiency (i.e., reduce computation cost) and (2) new packing and parallelization
+techniques.
+Using real-world datasets, we evaluated the performance of our model and demonstrated its feasibility in speed and memory consumption. For example, it took about 116 minutes to obtain the
+training model from homomorphically encrypted Edinburgh dataset. In addition, it gives fairly
+accurate predictions on the testing dataset. We present the first homomorphically encrypted
+logistic regression outsourcing model based on the critical observation that the precision loss of
+classification models is sufficiently small so that the decision plan stays still.
+
+### Summary
+Intro Discussion:
+- Biomedical institutions are highly regulated and so data sharing is acceptable only when security can be absolutely guaranteed
+- *Train the model without accessing the data* and only obtain the estimated model parameters in a global manner (GLORE)
+    - Also developed by Xiaoqian Jiang
+- Homomorphic encryption can be used in conjunction with GLORE to ensure that all computation can be done in the encrypted format
+- The goal of this paper is to introduce a framework to make logistic regression models on encrypted data feasible based on HE
+
+
+Method:
+- Logistic regression model to minimize the negative log-likelihood
+- Utilizing CKKS (HEAAN)
+- Chose the gradient descent optimization method (as opposed to the "Newton-Raphson" method)
+- Least squares approximation of the sigmoid function (degree 3 and 7)
+- Model is based on fixed hyperparameters that were decided before starting the evaluation
+
+Results:
+- Degree 7 polynomial approximation yields better accuracy than the degree 3 polynomial approximation
+- The difference between the model parameters obtained from encrypted/unencrypted evaluations was less than 2^-11 for a degree 7 polynomial approximation
+
+
+<br />
+
+*Insights:*
+- Training the model with fixed hyperparameters implies that you had to have had access to the model in the first place
+    - In a totally encrypted scenario, hyperparameter tuning would have to take place beforehand or in the encrypted domain

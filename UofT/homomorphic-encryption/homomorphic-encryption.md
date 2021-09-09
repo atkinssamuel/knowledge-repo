@@ -3,6 +3,8 @@
 
 ## Homomorphic Encryption for Arithmetic of Approximate Numbers
 ##### Authors: J. H. Cheon, A. Kim, M. Kim and Y. Song
+###### Published: 2016
+
 <br />
 
 Available: https://eprint.iacr.org/2016/421.pdf<br />

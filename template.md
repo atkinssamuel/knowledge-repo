@@ -3,6 +3,8 @@
 
 ## Title
 ##### Authors: 
+###### Published: 2000
+
 <br />
 
 Available: <br />
