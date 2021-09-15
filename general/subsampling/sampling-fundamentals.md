@@ -2,6 +2,9 @@
 - [LOCAL CASE-CONTROL SAMPLING: EFFICIENT SUBSAMPLING](#local-case-control-sampling-efficient-subsampling)
 - [Diversity creation methods: a survey and categorisation](#diversity-creation-methods-a-survey-and-categorisation)
 - [Selection via Proxy: Efficient Data Selection for Deep Learning](#selection-via-proxy-efficient-data-selection-for-deep-learning)
+- [Bayesian Bootstraps for Massive Data](#bayesian-bootstraps-for-massive-data)
+- [Diversity techniques improve the performance of the best imbalance learning ensembles](#diversity-techniques-improve-the-performance-of-the-best-imbalance-learning-ensembles)
+- [More Efficient Estimation for Logistic Regression with Optimal Subsamples](#more-efficient-estimation-for-logistic-regression-with-optimal-subsamples)
 
 ## LOCAL CASE-CONTROL SAMPLING: EFFICIENT SUBSAMPLING
 ##### Authors: William Fithian, Trevor Hastie
@@ -115,3 +118,92 @@ Results:
 
 *Insights:*
 - By incorporating a method like this into our validation work, we could experience extreme run-time improvements and potentially stronger model performance
+
+
+
+## Bayesian Bootstraps for Massive Data
+##### Authors: Andres F. Barrientos, Victor Pena
+###### Published: 2020
+
+<br />
+
+Available: https://projecteuclid.org/journalArticle/Download?urlId=10.1214%2F19-BA1155<br />
+
+Summary:  
+- P1
+
+<br />
+
+> In this article, we present data-subsetting algorithms that allow for
+the approximate and scalable implementation of the Bayesian bootstrap. They are
+analogous to two existing algorithms in the frequentist literature: the bag of little
+bootstraps (Kleiner et al., 2014) and the subsampled double bootstrap (Sengupta
+et al., 2016). Our algorithms have appealing theoretical and computational properties that are comparable to those of their frequentist counterparts. Additionally,
+we provide a strategy for performing lossless inference for a class of functionals of
+the Bayesian bootstrap and briefly introduce extensions to the Dirichlet Process.
+
+### Summary
+Method:
+- P1
+
+Results:
+- P1
+
+<br />
+
+*Insights:*
+- P1
+
+## Diversity techniques improve the performance of the best imbalance learning ensembles
+##### Authors: José F.Díez-Pastora, Juan J.Rodrígueza, César I.García-Osorioa, Ludmila I.Kunchevab
+###### Published: 2015
+
+<br />
+
+Available: https://www.sciencedirect.com/science/article/abs/pii/S0020025515005186<br />
+
+Summary:  
+- This paper defines 4 ways in which the class imbalance problem is practically adressed
+    - At the algorithm level (Hellinger Distance Decision Trees, Class Confidence Proportion Decision Trees, etc.), at the data-level (clever downsampling/upsampling techniques), cost-assigning (assigning a cost to each class), and with classifier ensembles
+- This paper argues that by increasing the diversity of an ensemble there is a drastic improvement in the performance
+- Generally, larger ensembles yielded stronger performance
+
+<br />
+
+> Many real-life problems can be described as unbalanced, where the number of instances belonging to one of the classes is much larger than the numbers in other classes. Examples are spam detection, credit card fraud detection or medical diagnosis. Ensembles of classifiers have acquired popularity in this kind of problems for their ability to obtain better results than individual classifiers. The most commonly used techniques by those ensembles especially designed to deal with imbalanced problems are for example Re-weighting, Oversampling and Undersampling. Other techniques, originally intended to increase the ensemble diversity, have not been systematically studied for their effect on imbalanced problems. Among these are Random Oracles, Disturbing Neighbors, Random Feature Weights or Rotation Forest. This paper presents an overview and an experimental study of various ensemble-based methods for imbalanced problems, the methods have been tested in its original form and in conjunction with several diversity-increasing techniques, using 84 imbalanced data sets from two well known repositories. This paper shows that these diversity-increasing techniques significantly improve the performance of ensemble methods for imbalanced problems and provides some ideas about when it is more convenient to use these diversifying techniques.
+
+*Insights:*
+- Enhancing diversity pays off in the context of ensemble learning
+- We can utilize many of the methods presented in this paper to increase data diversity for performance improvements
+
+## More Efficient Estimation for Logistic Regression with Optimal Subsamples
+##### Authors: HaiYing Wang
+###### Published: 2019
+
+<br />
+
+Available: https://arxiv.org/pdf/1802.02698.pdf<br />
+
+Summary:  
+- This paper constructs a more efficient un-weighted estimator "based on subsamples taken randomly according to the optimal subsampling probabilities"
+    - This estimator has a smaller variance-covariance matrix compared to the weighted estimator
+- This paper also shows that Poisson subsampling is more efficient in estimating the parameters of the estimator when the subsample size is proportional to the full data sample size
+- Poission subsampling results in a smaller variance-covariance matrix if the subsampling ratio converges to a positive constant
+
+<br />
+
+> In this paper, we propose improved estimation method for logistic regression based on subsamples taken according the optimal subsampling probabilities developed in Wang et al.
+(2018). Both asymptotic results and numerical results show that the new estimator has
+a higher estimation efficiency. We also develop a new algorithm based on Poisson subsampling, which does not require to approximate the optimal subsampling probabilities all
+at once. This is computationally advantageous when available random-access memory is
+not enough to hold the full data. Interestingly, asymptotic distributions also show that
+Poisson subsampling produces a more efficient estimator if the sampling ratio, the ratio of
+the subsample size to the full data sample size, does not converge to zero. We also obtain
+the unconditional asymptotic distribution for the estimator based on Poisson subsampling.
+Pilot estimators are required to calculate subsampling probabilities and to correct biases in
+un-weighted estimators; interestingly, even if pilot estimators are inconsistent, the proposed
+method still produce consistent and asymptotically normal estimators.
+
+### Summary
+*Insights:*
+- The estimator and sampling method proposed in this paper could potentially be used in the smart-subsampling package to minimize the variance-covariance matrix after data downsampling
