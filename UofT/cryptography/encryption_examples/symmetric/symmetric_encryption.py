@@ -1,5 +1,10 @@
 from cryptography.fernet import Fernet
 
+"""
+Fernet encrypts and decrypts using AES in CBC mode with a 128-bit key for encryption using PKCS7 padding. For 
+authentication, it uses HMAC and SHA256. The initialization vectors are generated using os.urandom().
+"""
+
 key_path = "symmetric_key.txt"
 key_file = open(key_path, "rb")
 key = key_file.read()

@@ -2,7 +2,7 @@
 - [Efficient Logistic Regression on Large Encrypted Data](#efficient-logistic-regression-on-large-encrypted-data)
 - [Logistic Regression Model Training based on the Approximate Homomorphic Encryption](#logistic-regression-model-training-based-on-the-approximate-homomorphic-encryption)
 - [Logistic regression over encrypted data from fully homomorphic encryption](#logistic-regression-over-encrypted-data-from-fully-homomorphic-encryption)
-- [Secure Logistic Regression Based on Homomorphic Encryption: Design and Evaluation](#secure-logistic-regression-based-on-homomorphic-encryption:-design-and-evaluation)
+- [Secure Logistic Regression Based on Homomorphic Encryption: Design and Evaluation](#secure-logistic-regression-based-on-homomorphic-encryption-design-and-evaluation)
 
 ## Efficient Logistic Regression on Large Encrypted Data
 ##### Authors: Kyoohyung Han, Seungwan Hong, Jung Hee Cheon, and Daejun Park
