@@ -9,7 +9,7 @@ Then copy the index printed by the script into the index list of the .md file.
 import sys
 
 title = str(sys.argv[1])
-parsed_title = title.lower().replace(" ", "-").replace(":", "")
+parsed_title = title.lower().replace(" ", "-").replace(":", "").replace("'", "")
 
 
 print(f"[{title}](#{parsed_title})")

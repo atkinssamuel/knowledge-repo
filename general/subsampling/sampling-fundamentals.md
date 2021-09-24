@@ -18,7 +18,6 @@ Recommendation: A great read to learn about a relatively modern sampling techniq
 Standard case-control sampling is inconsistent under model misspecification for the population risk-minimizing coefficients 
 θ∗. By contrast, our estimator is consistent for θ∗ provided that the pilot estimate is. Moreover, under correct specification and with a consistent, independent pilot estimate, our estimator has exactly twice the asymptotic variance of the full-sample MLE—even if the selected subsample comprises a miniscule fraction of the full data set, as happens when the original data are severely imbalanced. The factor of two improves to 1 + 1/c if we multiply the baseline acceptance probabilities by c > 1 (and weight points with acceptance probability greater than 1), taking roughly (1 + c)/2 times as many data points into the subsample. Experiments on simulated and real data show that our method can substantially outperform standard case-control 
 
-### Summary:
 Method:
 - Marginal and conditional imbalance plague many classification and regression problems
 - By sampling in a more efficient way, the size of the dataset can be significantly reduced and more complex models and methods can be utilized
@@ -98,7 +97,6 @@ Summary:
 
 > Data selection methods, such as active learning and core-set selection, are useful tools for machine learning on large datasets. However, they can be prohibitively expensive to apply in deep learning because they depend on feature representations that need to be learned. In this work, we show that we can greatly improve the computational efficiency by using a small proxy model to perform data selection (e.g., selecting data points to label for active learning). By removing hidden layers from the target model, using smaller architectures, and training for fewer epochs, we create proxies that are an order of magnitude faster to train. Although these small proxy models have higher error rates, we find that they empirically provide useful signals for data selection. We evaluate this "selection via proxy" (SVP) approach on several data selection tasks across five datasets: CIFAR10, CIFAR100, ImageNet, Amazon Review Polarity, and Amazon Review Full. For active learning, applying SVP can give an order of magnitude improvement in data selection runtime (i.e., the time it takes to repeatedly train and select points) without significantly increasing the final error (often within 0.1%). For core-set selection on CIFAR10, proxies that are over 10x faster to train than their larger, more accurate targets can remove up to 50% of the data without harming the final accuracy of the target, leading to a 1.6x end-to-end training time improvement.
 
-### Summary
 *"Active learning" (https://www.datacamp.com/community/tutorials/active-learning):*
 - The main hypothesis is that if a learning algorithm is able to choose the data that it learns from it will beform much better than traditional methods
 - When a model is given a large amount of data randomly sampled from the underlying distrubtion it is "passively learning"
@@ -142,7 +140,6 @@ et al., 2016). Our algorithms have appealing theoretical and computational prope
 we provide a strategy for performing lossless inference for a class of functionals of
 the Bayesian bootstrap and briefly introduce extensions to the Dirichlet Process.
 
-### Summary
 Method:
 - P1
 
@@ -204,6 +201,5 @@ Pilot estimators are required to calculate subsampling probabilities and to corr
 un-weighted estimators; interestingly, even if pilot estimators are inconsistent, the proposed
 method still produce consistent and asymptotically normal estimators.
 
-### Summary
 *Insights:*
 - The estimator and sampling method proposed in this paper could potentially be used in the smart-subsampling package to minimize the variance-covariance matrix after data downsampling

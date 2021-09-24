@@ -39,7 +39,6 @@ HEs, our result is encouraging and demonstrates the practical feasibility
 of the logistic regression training on large encrypted data, for the first
 time to the best of our knowledge.
 
-### Summary
 Method:
 - HEAAN/CKKS encryption scheme
 - Fully-encrypted training and inference (no decryption key for either phase)
@@ -107,7 +106,6 @@ Our method shows a state-of-the-art performance of homomorphic encryption system
 obtain a logistic regression model given the dataset consisting of 1579 samples, each of which
 has 18 features with a binary outcome variable.
 
-### Summary
 Method:
 - Packing method utilized
 - NAG for convergence rate
@@ -157,7 +155,6 @@ to reduce the plaintext growth in the training process. As a result, our
 training over encrypted data takes 0.4–3.2 hours per iteration of gradient
 descent.
 
-### Summary
 Method:
 - BFV encryption scheme
 - Polynomial approximation of the Sigmoid function
@@ -212,7 +209,6 @@ accurate predictions on the testing dataset. We present the first homomorphicall
 logistic regression outsourcing model based on the critical observation that the precision loss of
 classification models is sufficiently small so that the decision plan stays still.
 
-### Summary
 Intro Discussion:
 - Biomedical institutions are highly regulated and so data sharing is acceptable only when security can be absolutely guaranteed
 - *Train the model without accessing the data* and only obtain the estimated model parameters in a global manner (GLORE)

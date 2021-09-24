@@ -36,7 +36,6 @@ circuits, we show that our scheme can be applied to the efficient evaluation of 
 functions such as multiplicative inverse, exponential function, logistic function and discrete
 Fourier transform.
 
-### Summary
 Method:
 - Utilizes "rescaling" - different from BFV scheme that uses "modulus switching"
     - Rescaling is a procedure that reduces the size of a ciphertext modulus and removes the error located in the LSBs of messages
